@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/">Home</router-link> /
+    <router-link to="/carrito">Carrito</router-link>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {},
+  mounted() {
+    document
+      .querySelectorAll('[data-toggle="tooltip"]')
+      .forEach(function (tooltip) {
+        // eslint-disable-next-line
+        new bootstrap.Tooltip(tooltip)
+      })
+  },
 }
 </script>
 
